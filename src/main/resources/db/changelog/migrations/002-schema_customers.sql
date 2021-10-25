@@ -1,4 +1,4 @@
-create table customers_table
+create table if not exists customers_table
 (
     id           serial      NOT NULL,
     name         VARCHAR(20) NOT NULL,

@@ -1,4 +1,4 @@
-create table orders
+create table if not exists orders
 (
     id          serial      NOT NULL primary key,
     date         timestamp   not null default now(),
