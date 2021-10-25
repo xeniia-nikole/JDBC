@@ -19,7 +19,7 @@ public class JDBCRepository {
         private JdbcTemplate jdbcTemplate;
 
         private String scriptSelect;
-        private String pathScript = "select_product_name.sql";
+        private final String pathScript = "select_product_name.sql";
 
         public String getProductName(String name) {
 
