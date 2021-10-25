@@ -1,6 +1,6 @@
 databaseChangeLog:
   - include:
-      file: migrations/001-schema orders.sql
+      file: migrations/001-schema 001-schema orders.sql
       relativeToChangelogFile: true
 
   - include:
@@ -16,16 +16,16 @@ databaseChangeLog:
       relativeToChangelogFile: true
 
   - include:
-      file: migrations/005-fill_orders.sql
+      file: migrations/005-005-fill_orders.sql
       relativeToChangelogFile: true
 
   - include:
-      file: migrations/006-fill_customers_table.sql
+      file: migrations/006-006-fill_customers_table.sql
       relativeToChangelogFile: true
 
   - changeSet:
       id: 18544
-      author: Alexey
+      author: Ksenia
       comment: "Create new note customer"
       changes:
         - insert:
@@ -33,20 +33,20 @@ databaseChangeLog:
             columns:
               - column:
                   name: name
-                  value: "Ivailo"
+                  value: "George"
               - column:
                   name: surname
-                  value: "Ivailov"
+                  value: "O"
               - column:
                   name: age
-                  value: "12"
+                  value: "21"
               - column:
                   name: phone_number
-                  value: "112221111"
+                  value: "89090000009"
 
   - changeSet:
       id: 18545
-      author: Alexey
+      author: Ksenia
       comment: "Create new note orders"
       changes:
         - insert:
@@ -54,7 +54,7 @@ databaseChangeLog:
             columns:
               - column:
                   name: product_name
-                  value: "Wegetables"
+                  value: "Grape"
               - column:
                   name: customer_id
                   value: "9"

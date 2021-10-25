@@ -2,12 +2,12 @@
 
 <databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
 
-    <changeSet id="001" author="Alexey">
+    <changeSet id="001" author="Ksenia">
 
         <insert tableName="orders">
-            <column name="product_name" value="Brot"/>
+            <column name="product_name" value="Bread"/>
             <column name="customer_id" value="1"/>
             <column name="amount" value="10"/>
         </insert>
@@ -22,7 +22,7 @@
             <column name="amount" value="22"/>
         </insert>
         <insert tableName="orders">
-            <column name="product_name" value="Tomat"/>
+            <column name="product_name" value="Tomato"/>
             <column name="customer_id" value="4"/>
             <column name="amount" value="1"/>
         </insert>
