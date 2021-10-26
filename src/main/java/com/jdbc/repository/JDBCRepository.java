@@ -22,7 +22,7 @@ public class JDBCRepository {
     }
 
     public String getProductName(String name) {
-        String sql = read("select-product-by-name.sql");
+        String sql = read("productByName.sql");
         SqlParameterSource namedParameters = new MapSqlParameterSource("name", name);
         return jdbcTemplate.queryForObject(sql, namedParameters, String.class);
     }

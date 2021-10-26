@@ -10,15 +10,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/")
 public class JDBCController {
 
-        private final JDBCRepository jdbcRepository;
+    private final JDBCRepository jdbcRepository;
 
-        public JDBCController(JDBCRepository jdbcRepository) {
-            this.jdbcRepository = jdbcRepository;
-        }
+    public JDBCController(JDBCRepository jdbcRepository) {
+        this.jdbcRepository = jdbcRepository;
+    }
 
-        @GetMapping("/products/fetch-product")
-        public String getCustomerProduct(@RequestParam("name") String name) {
-                return jdbcRepository.getProductName(name);
-            }
-        }
+    @GetMapping("/products/fetch-product")
+    public String getCustomerProduct(@RequestParam("name") String name) {
+        return jdbcRepository.getProductName(name);
+    }
+}
 
