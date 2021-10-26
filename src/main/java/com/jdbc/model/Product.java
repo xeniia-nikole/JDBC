@@ -2,31 +2,44 @@ package com.jdbc.model;
 
 public class Product {
 
-    private String name;
-    private String product_name;
+    private String productName;
+    private int amount;
+    private String date;
 
-    public Product(String name, String product_name) {
-        this.name = name;
-        this.product_name = product_name;
+
+    public String getProductName() {
+        return productName;
     }
 
-    public String getName() {
-        return name;
+    public Product setProductName(String productName) {
+        this.productName = productName;
+        return this;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public int getAmount() {
+        return amount;
     }
 
-    public String getProduct_name() {
-        return product_name;
+    public Product setAmount(int amount) {
+        this.amount = amount;
+        return this;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public Product setDate(String date) {
+        this.date = date;
+        return this;
     }
 
     @Override
     public String toString() {
-        return "Product{" +
-                "name='" + name + '\'' +
-                ", product_name='" + product_name + '\'' +
+        return "Order{" +
+                "productName='" + productName + '\'' +
+                ", amount=" + amount +
+                ", date='" + date + '\'' +
                 '}';
     }
 }
