@@ -30,6 +30,6 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Order includes " + amount + " amount of product " + productName;
+        return "Order contains " + amount + " pieces of product " + productName;
     }
 }
