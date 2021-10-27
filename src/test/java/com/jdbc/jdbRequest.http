@@ -1,0 +1,4 @@
+GET http://localhost:8080/products/fetch-product?name=Ian
+Accept: application/json
+
+###

@@ -38,21 +38,21 @@ VALUES ('George', 'O', 42, '89080000008');
 insert into customers(name, surname, age, phone_number)
 VALUES ('Eva', 'W', 16, '89090000009');
 
-insert into orders(product_name, amount)
-VALUES ('water', 3);
-insert into orders(product_name, amount)
-VALUES ('folder', 6);
-insert into orders(product_name, amount)
-VALUES (default, 8);
-insert into orders(product_name, amount)
-VALUES ('plant', 1);
-insert into orders(product_name, amount)
-VALUES ('book', 3);
-insert into orders(product_name, amount)
-VALUES ('paper bag', 1);
-insert into orders(product_name, amount)
-VALUES ('lightning', 2);
-insert into orders(product_name, amount)
-VALUES ('pen', 12);
-insert into orders(product_name, amount)
-VALUES ('hairbrush', 3);
+insert into orders(product_name, customer_id ,amount)
+VALUES ('water', 1, 3);
+insert into orders(product_name, customer_id ,amount)
+VALUES ('folder', 2, 6);
+insert into orders(product_name, customer_id ,amount)
+VALUES (default, 3, 8);
+insert into orders(product_name, customer_id ,amount)
+VALUES ('plant', 4, 1);
+insert into orders(product_name, customer_id ,amount)
+VALUES ('book', 5, 3);
+insert into orders(product_name, customer_id ,amount)
+VALUES ('paper bag', 6, 1);
+insert into orders(product_name, customer_id ,amount)
+VALUES ('lightning', 7, 2);
+insert into orders(product_name, customer_id ,amount)
+VALUES ('pen', 8, 12);
+insert into orders(product_name, customer_id ,amount)
+VALUES ('hairbrush', 9, 3);

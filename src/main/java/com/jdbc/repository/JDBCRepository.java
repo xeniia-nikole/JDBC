@@ -22,17 +22,16 @@ public class JDBCRepository {
         this.sql = read("productByName.sql");
     }
 
-    public String getProductName(String name) {
+    public String getProductName(String customersName) {
         Product product = jdbcTemplate.queryForObject(sql,
                 (rs, rowNum) -> new Product(
                         rs.getString("productName"),
-                        rs.getInt("amount")), name);
+                        rs.getInt("amount")), customersName);
         if (product != null) {
-            return name + "'s order includes " + product.getProductName() +
-                    " amount of product " + product.getAmount() ;
-        }
-        else {
-            System.out.println(name + "'s order includes nothing");
+            return customersName + "'s order includes " + product.getProductName() +
+                    " amount of product " + product.getAmount();
+        } else {
+            System.out.println(customersName + "'s order includes nothing");
             return null;
         }
     }
