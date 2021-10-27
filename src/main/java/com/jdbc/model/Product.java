@@ -4,8 +4,11 @@ public class Product {
 
     private String productName;
     private int amount;
-    private String date;
 
+    public Product(String productName, int amount) {
+        this.productName = productName;
+        this.amount = amount;
+    }
 
     public String getProductName() {
         return productName;
@@ -25,21 +28,8 @@ public class Product {
         return this;
     }
 
-    public String getDate() {
-        return date;
-    }
-
-    public Product setDate(String date) {
-        this.date = date;
-        return this;
-    }
-
     @Override
     public String toString() {
-        return "Order{" +
-                "productName='" + productName + '\'' +
-                ", amount=" + amount +
-                ", date='" + date + '\'' +
-                '}';
+        return "Order includes " + amount + " amount of product " + productName;
     }
 }

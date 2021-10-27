@@ -1,10 +1,9 @@
 package com.jdbc.repository;
 
+import com.jdbc.model.Product;
 import org.springframework.core.io.ClassPathResource;
-import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
-import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
-import org.springframework.jdbc.core.namedparam.SqlParameterSource;
-import org.springframework.stereotype.Repository;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Component;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -12,19 +11,30 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.stream.Collectors;
 
-@Repository
+@Component
 public class JDBCRepository {
 
-    private final NamedParameterJdbcTemplate jdbcTemplate;
+    private final JdbcTemplate jdbcTemplate;
+    private final String sql;
 
-    public JDBCRepository(NamedParameterJdbcTemplate jdbcTemplate) {
+    public JDBCRepository(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
+        this.sql = read("productByName.sql");
     }
 
     public String getProductName(String name) {
-        String sql = read("productByName.sql");
-        SqlParameterSource namedParameters = new MapSqlParameterSource("name", name);
-        return jdbcTemplate.queryForObject(sql, namedParameters, String.class);
+        Product product = jdbcTemplate.queryForObject(sql,
+                (rs, rowNum) -> new Product(
+                        rs.getString("productName"),
+                        rs.getInt("amount")), name);
+        if (product != null) {
+            return name + "'s order includes " + product.getProductName() +
+                    " amount of product " + product.getAmount() ;
+        }
+        else {
+            System.out.println(name + "'s order includes nothing");
+            return null;
+        }
     }
 
 

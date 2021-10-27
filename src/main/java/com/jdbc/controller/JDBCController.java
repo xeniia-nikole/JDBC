@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/")
 public class JDBCController {
-
     private final JDBCRepository jdbcRepository;
 
     public JDBCController(JDBCRepository jdbcRepository) {
