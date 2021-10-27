@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+
+    <changeSet id="001" author="Ksenia">
+
+        <insert tableName="orders">
+            <column name="product_name" value="Water"/>
+            <column name="customer_id" value="1"/>
+            <column name="amount" value="10"/>
+        </insert>
+        <insert tableName="orders">
+            <column name="product_name" value="Folder"/>
+            <column name="customer_id" value="2"/>
+            <column name="amount" value="20"/>
+        </insert>
+        <insert tableName="orders">
+            <column name="product_name" value="Wine"/>
+            <column name="customer_id" value="3"/>
+            <column name="amount" value="2"/>
+        </insert>
+        <insert tableName="orders">
+            <column name="product_name" value="Plant"/>
+            <column name="customer_id" value="4"/>
+            <column name="amount" value="1"/>
+        </insert>
+        <insert tableName="orders">
+            <column name="product_name" value="Paper bag"/>
+            <column name="customer_id" value="5"/>
+            <column name="amount" value="6"/>
+        </insert>
+        <insert tableName="orders">
+            <column name="product_name" value="Lightning"/>
+            <column name="customer_id" value="6"/>
+            <column name="amount" value="7"/>
+        </insert>
+        <insert tableName="orders">
+            <column name="product_name" value="Hairbrush"/>
+            <column name="customer_id" value="7"/>
+            <column name="amount" value="9"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,16 @@
+databaseChangeLog:
+  - include:
+      file: migrations/001-schema_customers.sql
+      relativeToChangelogFile: true
+
+  - include:
+      file: migrations/002-schema_orders.sql
+      relativeToChangelogFile: true
+
+  - include:
+      file: migrations/003-fill_customers.xml
+      relativeToChangelogFile: true
+
+  - include:
+      file: migrations/004-fill_orders.xml
+      relativeToChangelogFile: true
