@@ -1,6 +1,7 @@
 package com.jdbc.controller;
 
 import com.jdbc.repository.JDBCRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class JDBCController {
     private final JDBCRepository jdbcRepository;
 
+    @Autowired
     public JDBCController(JDBCRepository jdbcRepository) {
         this.jdbcRepository = jdbcRepository;
     }
