@@ -24,7 +24,8 @@ public class JDBCRepository {
     }
 
     public String getProductName(String customersName) {
-        SqlParameterSource namedParameters = new MapSqlParameterSource("product_name", customersName);
+        SqlParameterSource namedParameters =
+                new MapSqlParameterSource("name", customersName);
         return jdbcTemplate.queryForObject(sql, namedParameters, String.class);
     }
 
