@@ -1,8 +1,9 @@
 package com.jdbc.repository;
 
-import com.jdbc.model.Product;
 import org.springframework.core.io.ClassPathResource;
-import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.stereotype.Component;
 
 import java.io.BufferedReader;
@@ -14,26 +15,17 @@ import java.util.stream.Collectors;
 @Component
 public class JDBCRepository {
 
-    private final JdbcTemplate jdbcTemplate;
+    private final NamedParameterJdbcTemplate jdbcTemplate;
     private final String sql;
 
-    public JDBCRepository(JdbcTemplate jdbcTemplate) {
+    public JDBCRepository(NamedParameterJdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
         this.sql = read("productByName.sql");
     }
 
     public String getProductName(String customersName) {
-        Product product = jdbcTemplate.queryForObject(sql, (resultSet, rowNum) -> new Product(
-                resultSet.getString("product_name"),
-                resultSet.getInt("amount")
-        ), customersName);
-        if (product != null) {
-            return customersName + "'s order contains " + product.getAmount() +
-                    " pieces of product " + product.getProductName();
-        } else {
-            System.out.println(customersName + "'s order includes nothing");
-            return null;
-        }
+        SqlParameterSource namedParameters = new MapSqlParameterSource("name", customersName);
+        return jdbcTemplate.queryForObject(sql, namedParameters, String.class);
     }
 
 
